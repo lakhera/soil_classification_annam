@@ -1,39 +1,34 @@
-# src/preprocessing.py
+#%%
+# src/training.py
 
-# This module contains the preprocessing steps for the soil image dataset.
-import os
-import pandas as pd
-from torchvision import transforms
-from PIL import Image
-from torch.utils.data import Dataset, DataLoader
+# -------------------------
+# Soil Image Classification Challenge - Part 2
+# The Soil Image Classification Challenge is a machine learning competition organised by Annam.ai at IIT Ropar, serving as an initial task for shortlisted hackathon participants.
+# Task: Classify provided image as Soil or NotSoil image , given Single label Binary Image classification.
+# Team Name: RootCoders
+# Team Members : Amit Lakhera, Vikramjeet, Pradipta Das, Jyoti Ghungru, Sukanya Saha
+# -------------------------
 
-# Dataset class for loading soil images and their labels
-class SoilDataset(Dataset):
-    def __init__(self, csv_file, img_dir, transform=None):
-        self.labels = pd.read_csv(csv_file)
-        self.img_dir = img_dir
-        self.transform = transform
+from soil_classification import SoilClassificationModel
 
-    def __len__(self):
-        return len(self.labels)
+def main():
+    # Update these paths to your actual data locations
+    train_folder = "/kaggle/input/soil-classification-part-2/soil_competition-2025/train"          # Modify to your image folder path
+    train_csv = "/kaggle/input/soil-classification-part-2/soil_competition-2025/train/train_labels.csv"  # Modify to your label csv
 
-    def __getitem__(self, idx):
-        img_path = os.path.join(self.img_dir, self.labels.iloc[idx, 0])
-        image = Image.open(img_path).convert("RGB")
-        label = self.labels.iloc[idx, 1]
-        if self.transform:
-            image = self.transform(image)
-        return image, label
+    # Initialize the model (you can adjust nu, kernel, gamma if needed)
+    model = SoilClassificationModel(kernel='rbf', gamma='auto', nu=0.1)
 
-def get_transforms(phase="train"):
-    if phase == "train":
-        return transforms.Compose([
-            transforms.Resize((224, 224)),
-            transforms.RandomHorizontalFlip(),
-            transforms.ToTensor(),
-        ])
-    else:
-        return transforms.Compose([
-            transforms.Resize((224, 224)),
-            transforms.ToTensor(),
-        ])
+    print("Starting training process...")
+
+    # Train the model on all available training data
+    model.fit(target_folder=train_folder, labels_csv=train_csv)
+
+    # Save the trained model for future inference or testing
+    model.save_model("soil_classification_model.pkl")
+
+    print("Training completed and model saved as 'soil_classification_model.pkl'.")
+
+if __name__ == "__main__":
+    main()
+

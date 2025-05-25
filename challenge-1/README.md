@@ -1,5 +1,6 @@
-# Soil-Classification - Soil Image Classification Challenge
-# Team Name: RootCoders (Amit Lakhera, Vikramjeet, Jyoti Ghungru, Pradipta Das, Sukanya Saha)
+# Soil-Classification - Soil Image Classification (Challenge - 1)
+# Team Name: RootCoders
+# Team Members: Amit Lakhera, Vikramjeet, Jyoti Ghungru, Pradipta Das, Sukanya Saha
 # Last Modified: May 25, 2025
 # Hackathon organized by Annam.ai at IIT Ropar.
 
