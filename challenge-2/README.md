@@ -1,10 +1,15 @@
-# Soil Image Single-Class Binary Classification
+# Soil-Classification - Soil Image Single-Class Binary Classification
+# Team Name: RootCoders (Amit Lakhera, Vikramjeet, Jyoti Ghungru, Pradipta Das, Sukanya Saha)
+# Last Modified: May 25, 2025
+# Hackathon organized by Annam.ai at IIT Ropar.
 
-## Project Overview
+# Project Overview
 
 This project provides a robust solution for **single-class binary image classification** using anomaly detection, designed for highly imbalanced soil image datasets. The pipeline leverages feature engineering and a One-Class SVM to identify "soil" images (normal class) and flag "not soil" images as anomalies, making it suitable for real-world cases with limited negative samples.
 
-## Features
+
+
+# Features
 
 - **Advanced Feature Extraction:** Combines grayscale histogram, Local Binary Pattern (LBP), and Histogram of Oriented Gradients (HOG) for comprehensive image representation.
 - **Anomaly Detection Approach:** Uses One-Class SVM to model the "soil" class and flag outliers.
@@ -13,8 +18,7 @@ This project provides a robust solution for **single-class binary image classifi
 - **Sample Visualization:** Visualizes predictions and errors for interpretability.
 - **Model Persistence:** Save and load trained models for reuse.
 
-
-## Dependencies
+# Dependencies
 
 Install all dependencies using the provided `requirements.txt`:
 
@@ -34,8 +38,7 @@ Install with:
 pip install -r requirements.txt
 ```
 
-
-## Project Structure
+# Project Structure
 
 ```
 .
@@ -49,7 +52,7 @@ pip install -r requirements.txt
 ```
 ---
 
-## Data Preparation \& Feature Transformation
+# Data Preparation \& Feature Transformation
 
 Images are loaded in grayscale and resized to 128x128 pixels. For each image, three sets of features are extracted:
 
@@ -62,19 +65,19 @@ These features are concatenated into a single 1D feature vector per image and st
 
 ---
 
-## Model and Training Strategy Used
+# Model and Training Strategy Used
 
 The model uses a **One-Class Support Vector Machine (OneClassSVM)** with an RBF kernel, which is well-suited for anomaly detection in imbalanced datasets. Training is performed only on the "soil" class, learning its feature distribution to distinguish it from outliers. The pipeline allows for an optional validation split to assess model performance before full training. The main workflow is encapsulated in the `SoilClassificationModel` class, which manages feature extraction, scaling, model fitting, prediction, and evaluation.
 
 ---
 
-## Loss Function and Evaluation Metrics
+# Loss Function and Evaluation Metrics
 
 The OneClassSVM does not use a traditional loss function; it optimizes a margin-based objective to separate the normal class from anomalies. For evaluation, the code computes accuracy, precision, recall, and F1-score. It also generates a classification report and confusion matrix, with visualizations for confusion matrix, metric comparison, and prediction distribution. These metrics help assess the model's ability to correctly identify soil versus not-soil images in an unbalanced setting.
 
 ---
 
-## Our Approach
+# Our Approach
 
 - **Problem Framing:** The task is approached as anomaly detection, treating "soil" as the normal class and "not soil" as anomalies.
 - **Feature Engineering:** Combines grayscale histogram, LBP, and HOG features for rich image representation.
@@ -84,7 +87,7 @@ The OneClassSVM does not use a traditional loss function; it optimizes a margin-
 
 ---
 
-## How It Works
+# How It Works
 
 ### 1. Data Preparation \& Feature Extraction
 
@@ -115,7 +118,7 @@ The OneClassSVM does not use a traditional loss function; it optimizes a margin-
 - Trained models can be saved and reloaded for later use.
 
 
-## Usage
+# Usage
 
 ### Prepare your data
 
@@ -200,5 +203,3 @@ metrics = model.evaluate_predictions(true_labels, predictions)
 For questions or issues, please open an issue on the repository.
 
 <div style="text-align: center">⁂</div>
-
-

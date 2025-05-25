@@ -1,10 +1,9 @@
 # Soil-Classification - Soil Image Classification Challenge
 # Team Name: RootCoders (Amit Lakhera, Vikramjeet, Jyoti Ghungru, Pradipta Das, Sukanya Saha)
 # Last Modified: May 25, 2025
+# Hackathon organized by Annam.ai at IIT Ropar.
 
 This repository contains a PyTorch-based image classification pipeline to identify soil types (Alluvial, Black, Clay, and Red) from soil images using a ResNet-18 model and transfer learning.
-
-Organized by Annam.ai at IIT Ropar.
 
 # Structure
 
@@ -23,6 +22,26 @@ The project was developed and run on Kaggle Notebooks with a P100 GPU. It includ
 - Training with evaluation metrics
 - Test-time inference and CSV submission generation
 
+# Dependencies
+
+Install all dependencies using the provided `requirements.txt`:
+
+```
+numpy==1.24.3
+pandas==1.5.3
+matplotlib==3.7.1
+Pillow==9.5.0
+tqdm==4.65.0
+torch==2.0.0
+torchvision==0.15.1
+scikit-learn==1.2.2
+```
+
+Install with:
+
+```bash
+pip install -r requirements.txt
+```
 # Dataset (On Kaggle)
 
 The dataset used is available in the Kaggle Soil Classification 2025 Challenge. It contains:
@@ -56,3 +75,9 @@ pip install torch torchvision pandas scikit-learn matplotlib pillow tqdm
 6. Run all cells. The training will start and the model will:
 7. Save the best model as best_model.pth
 8. Create the prediction file submission.csv
+
+---
+
+For questions or issues, please open an issue on the repository.
+
+<div style="text-align: center">⁂</div>

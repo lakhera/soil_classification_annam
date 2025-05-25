@@ -1,0 +1,13 @@
+# Core Libraries
+numpy==1.24.3
+pandas==1.5.3
+matplotlib==3.7.1
+Pillow==9.5.0
+tqdm==4.65.0
+
+# PyTorch and TorchVision
+torch==2.0.0
+torchvision==0.15.1
+
+# Sklearn for preprocessing and evaluation
+scikit-learn==1.2.2
