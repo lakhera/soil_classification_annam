@@ -57,19 +57,20 @@ Images are loaded in grayscale and resized to 128x128 pixels. For each image, th
 - **Local Binary Pattern (LBP):** Encodes local texture patterns using a radius of 3 and 24 points.
 - **Histogram of Oriented Gradients (HOG):** Extracts shape and edge information with 9 orientations and 8x8 pixel cells.
 
-These features are concatenated into a single 1D feature vector per image and standardized using `StandardScaler` to ensure uniform contribution across features. Images can be loaded from folders or filtered using a CSV file listing image IDs and labels[^1].
+These features are concatenated into a single 1D feature vector per image and standardized using `StandardScaler` to ensure uniform contribution across features. Images can be loaded from folders or filtered using a CSV file listing image IDs and labels
+.
 
 ---
 
 ## Model and Training Strategy Used
 
-The model uses a **One-Class Support Vector Machine (OneClassSVM)** with an RBF kernel, which is well-suited for anomaly detection in imbalanced datasets. Training is performed only on the "soil" class, learning its feature distribution to distinguish it from outliers. The pipeline allows for an optional validation split to assess model performance before full training. The main workflow is encapsulated in the `SoilClassificationModel` class, which manages feature extraction, scaling, model fitting, prediction, and evaluation[^1].
+The model uses a **One-Class Support Vector Machine (OneClassSVM)** with an RBF kernel, which is well-suited for anomaly detection in imbalanced datasets. Training is performed only on the "soil" class, learning its feature distribution to distinguish it from outliers. The pipeline allows for an optional validation split to assess model performance before full training. The main workflow is encapsulated in the `SoilClassificationModel` class, which manages feature extraction, scaling, model fitting, prediction, and evaluation.
 
 ---
 
 ## Loss Function and Evaluation Metrics
 
-The OneClassSVM does not use a traditional loss function; it optimizes a margin-based objective to separate the normal class from anomalies. For evaluation, the code computes accuracy, precision, recall, and F1-score. It also generates a classification report and confusion matrix, with visualizations for confusion matrix, metric comparison, and prediction distribution. These metrics help assess the model's ability to correctly identify soil versus not-soil images in an unbalanced setting[^1].
+The OneClassSVM does not use a traditional loss function; it optimizes a margin-based objective to separate the normal class from anomalies. For evaluation, the code computes accuracy, precision, recall, and F1-score. It also generates a classification report and confusion matrix, with visualizations for confusion matrix, metric comparison, and prediction distribution. These metrics help assess the model's ability to correctly identify soil versus not-soil images in an unbalanced setting.
 
 ---
 
@@ -79,7 +80,7 @@ The OneClassSVM does not use a traditional loss function; it optimizes a margin-
 - **Feature Engineering:** Combines grayscale histogram, LBP, and HOG features for rich image representation.
 - **Training:** One-Class SVM is trained only on the soil class, with optional validation to tune parameters.
 - **Prediction \& Evaluation:** Converts SVM output to binary labels, evaluates with standard metrics, and provides visual diagnostics and sample image predictions for interpretability.
-- **Model Persistence:** Includes utilities to save and load trained models for reuse[^1].
+- **Model Persistence:** Includes utilities to save and load trained models for reuse.
 
 ---
 
