@@ -55,7 +55,7 @@ pip install -r requirements.txt
 
 ## Data Preparation \& Feature Transformation
 
-Images are loaded in grayscale and resized to 128x128 pixels. For each image, three sets of features are extracted:
+Images are loaded in grayscale and resized to 224x224 pixels. For each image, three sets of features are extracted:
 
 - **Grayscale Histogram:** Captures the distribution of pixel intensities.
 - **Local Binary Pattern (LBP):** Encodes local texture patterns using a radius of 3 and 24 points.
