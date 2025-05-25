@@ -1,10 +1,12 @@
 # src/preprocessing.py
+
 import os
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 
 # load and prepare data
+
 def load_and_prepare_data(train_csv_path):
     df = pd.read_csv(train_csv_path)
     df['image'] = df['image_id']

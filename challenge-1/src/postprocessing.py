@@ -1,7 +1,9 @@
 # src/postprocessing.py
+
 import pandas as pd
 
 # generate submission csv from predictions
+
 def generate_submission(predictions, label_encoder, output_path="/kaggle/working/submission.csv"):
     submission_df = pd.DataFrame(predictions, columns=['image_id', 'label_encoded'])
     submission_df['soil_type'] = label_encoder.inverse_transform(submission_df['label_encoded'])
