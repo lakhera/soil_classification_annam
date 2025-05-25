@@ -1,6 +1,16 @@
-# Soil-Classification - Soil Image Classification Challenge
+# Soil-Classification - Soil Image Classification Challenge Part-2
 
-This repository contains a PyTorch-based image classification pipeline to identify soil types (Alluvial, Black, Clay, and Red) from soil images using a ResNet-18 model and transfer learning.
+This repository contains a PyTorch-based image classification pipeline to i to classify the images to if they're soil image or not.
+
+Organized by Annam.ai at IIT Ropar.
+
+# Structure
+
+1. download.sh – Checks if it's in the Kaggle environment and skips downloading.
+2. preprocessing.py – Loads the dataset, encodes labels, and splits into train/val.
+3. training.ipynb – Trains a ResNet-18 model on the soil images.
+4. inference.ipynb – Loads the best model and performs inference on the test set.
+5. postprocessing.py – Generates a submission CSV from predictions.
 
 # Overview
 
@@ -22,10 +32,10 @@ The dataset used is available in the Kaggle Soil Classification 2025 Challenge. 
 # Directory structure:
 
 /soil_classification-2025/
-├── train/
-├── train_labels.csv
-├── test/
-└── test_ids.csv
+|____ train/
+|____ train_labels.csv
+|____ test/
+|____ test_ids.csv
 
 # Dependencies
 

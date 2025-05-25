@@ -1,0 +1,21 @@
+{
+  "project": "Soil Image Classification Challenge",
+  "description": "Classify soil images into one of: Alluvial, Black, Clay, Red",
+  "task_type": "image_classification",
+  "labels": {
+    "0": "Alluvial",
+    "1": "Black",
+    "2": "Clay",
+    "3": "Red"
+  },
+  "metric": {
+    "name": "accuracy",
+    "type": "classification",
+    "greater_is_better": true
+  },
+  "output": {
+    "file": "submission.csv",
+    "columns": ["image_id", "soil_type"]
+  },
+  "notes": "Model trained using ResNet18 on PyTorch with standard image augmentations. Evaluation is based on accuracy over validation/test set."
+}
