@@ -200,5 +200,4 @@ For questions or issues, please open an issue on the repository.
 
 <div style="text-align: center">⁂</div>
 
-[^1]: final.py
 
