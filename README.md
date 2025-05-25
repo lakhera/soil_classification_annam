@@ -4,7 +4,7 @@ The Soil Image Classification Challenge is a machine learning competition organi
 
 **Challenge-1 Task:** Classify each provided soil image into one of the four soil types (Alluvial, Black, Clay, Red).
 
-**Challenge-1 Task:** Classify the images to if they're soil image or not.
+**Challenge-2 Task:** Classify the images to if they're soil image or not.
 
 **Deadline:** May 25, 2025, 11:59 PM IST
 
